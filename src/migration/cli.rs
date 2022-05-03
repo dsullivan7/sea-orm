@@ -4,7 +4,7 @@ use super::MigratorTrait;
 use crate::{Database, DbConn};
 use clap::{App, AppSettings, Arg};
 use dotenv::dotenv;
-use sea_schema::migration;
+use sea_schema::get_cli_subcommands;
 use std::{fmt::Display, process::exit};
 use tracing_subscriber::{prelude::*, EnvFilter};
 
@@ -88,7 +88,7 @@ fn build_cli() -> App<'static, 'static> {
                 .takes_value(false)
                 .global(true),
         );
-    for subcommand in migration::cli::get_subcommands() {
+    for subcommand in get_cli_subcommands!() {
         app = app.subcommand(subcommand);
     }
     app
