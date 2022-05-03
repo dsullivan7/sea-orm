@@ -1,4 +1,4 @@
-use entity::sea_orm::migration::prelude::*;
+use sea_orm_migration::prelude::*;
 use std::path::PathBuf;
 
 #[cfg(debug_assertions)]

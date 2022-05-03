@@ -1,11 +1,13 @@
 //! Migration executor
 
-use super::{seaql_migrations, MigrationTrait, SchemaManager};
-use crate::{
+use crate::{seaql_migrations, MigrationTrait, SchemaManager};
+use sea_orm::sea_query::{
+    Alias, Expr, ForeignKey, IntoTableRef, Query, SelectStatement, SimpleExpr, Table,
+};
+use sea_orm::{
     ActiveModelTrait, ActiveValue, ColumnTrait, Condition, ConnectionTrait, DbBackend, DbConn,
     DbErr, EntityTrait, QueryFilter, QueryOrder, Schema, Statement,
 };
-use sea_query::{Alias, Expr, ForeignKey, IntoTableRef, Query, SelectStatement, SimpleExpr, Table};
 use std::fmt::Display;
 use std::time::SystemTime;
 use tracing::info;

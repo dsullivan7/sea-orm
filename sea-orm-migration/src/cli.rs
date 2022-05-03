@@ -1,9 +1,9 @@
 //! Run migrator CLI
 
-use super::MigratorTrait;
-use crate::{Database, DbConn};
+use crate::MigratorTrait;
 use clap::{App, AppSettings, Arg};
 use dotenv::dotenv;
+use sea_orm::{Database, DbConn};
 use sea_schema::get_cli_subcommands;
 use std::{fmt::Display, process::exit};
 use tracing_subscriber::{prelude::*, EnvFilter};

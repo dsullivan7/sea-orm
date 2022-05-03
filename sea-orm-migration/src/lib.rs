@@ -9,15 +9,15 @@ pub mod query;
 pub mod seaql_migrations;
 pub mod statement;
 
-pub use connection::*;
-pub use database::*;
-pub use error::*;
 pub use manager::*;
 pub use migrator::*;
-pub use query::*;
-pub use statement::*;
 
-use crate::DbErr;
+use connection::*;
+use database::*;
+use error::*;
+use query::*;
+use statement::*;
+use sea_orm::DbErr;
 
 /// Define the name of a migration
 pub trait MigrationName {

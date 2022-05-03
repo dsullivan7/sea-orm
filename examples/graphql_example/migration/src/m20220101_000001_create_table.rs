@@ -1,4 +1,4 @@
-use entity::sea_orm::migration::prelude::*;
+use sea_orm_migration::prelude::*;
 use entity::{
     note,
     sea_orm::{DbBackend, EntityTrait, Schema},
